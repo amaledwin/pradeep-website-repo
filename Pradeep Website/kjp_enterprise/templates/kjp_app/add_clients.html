@@ -1,0 +1,13 @@
+{% extends 'kjp_app/base.html' %}
+{% block body_block %}
+	 <div class="jumbotron">
+	    <h3>Please Fill the client details and Submit </h3>
+  </div>
+  <div>
+    <form method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" name="" value="Submit">
+    </form>
+  </div>
+{% endblock %}

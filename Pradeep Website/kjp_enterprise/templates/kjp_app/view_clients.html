@@ -1,0 +1,27 @@
+  {% extends 'kjp_app/base.html' %}
+  {% load myfilters %}
+  {% block body_block %}
+      <div class="jumbotron">
+        <h3>Please Find the client details below</h3>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <tr class="table-primary">
+            <th>Client Name</th>
+            <th>Client Designation</th>
+            <th>Client Job Location</th>
+            <th>Client Phone Number</th>
+          </tr>
+          {% if client_rec %}
+              {% for rec in client_rec %}
+                  <tr class="table-success">
+                    <td>{{ rec.client_name|nam_cap }}</td>
+                    <td>{{ rec.client_designation|rep_slash }}</td>
+                    <td>{{ rec.client_job_location|nam_cap }}</td>
+                    <td>{{ rec.client_phone_num }}</td>
+                  </tr>
+                {% endfor%}
+            {% endif %}
+        </table>
+      </div>
+  {% endblock %}
