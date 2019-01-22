@@ -12,6 +12,8 @@ def rep_slash(value):
         return value.replace(' ','/',1).upper()
     elif '.' in value:
         return value.replace('.','/',1).upper()
+    else:
+        return value.upper()
 
 @register.filter(name='nam_cap')
 def nam_cap(value):
